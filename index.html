@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fat2Fit with Swaleha — Your Brighter, Stronger Self Starts Today</title>
+  <meta name="description" content="Personalised health coaching with Swaleha. Sustainable fat loss, real food, kind habits, and a coach in your corner — start on WhatsApp today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --sun: #FFB547;
+      --sun-soft: #FFF1D6;
+      --coral: #FF7A59;
+      --coral-deep: #E85D3C;
+      --leaf: #2BB673;
+      --leaf-soft: #E3F7EC;
+      --sky: #EAF6FF;
+      --ink: #2A2238;
+      --ink-soft: #5E566B;
+      --cream: #FFFBF4;
+      --white: #ffffff;
+      --radius: 22px;
+      --shadow: 0 18px 40px -18px rgba(232, 93, 60, .35);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.15; letter-spacing: -.01em; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(1140px, 100% - 32px); margin-inline: auto; }
+    section { padding: 88px 0; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--coral-deep); background: var(--sun-soft);
+      padding: 6px 14px; border-radius: 999px;
+    }
+    .section-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+    .section-head h2 { font-size: clamp(1.9rem, 4vw, 2.7rem); margin: 14px 0 12px; }
+    .section-head p { color: var(--ink-soft); font-size: 1.08rem; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      font-weight: 700; font-size: 1rem; padding: 15px 26px; border-radius: 999px;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      cursor: pointer; border: 0;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-wa { background: var(--leaf); color: var(--white); box-shadow: 0 14px 30px -12px rgba(43,182,115,.6); }
+    .btn-wa:hover { background: #229e62; }
+    .btn-ghost { background: var(--white); color: var(--ink); border: 2px solid #F3E3CF; }
+    .btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    /* Nav */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255, 251, 244, .85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(243, 227, 207, .7);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+    .logo { font-family: "Fraunces", serif; font-weight: 700; font-size: 1.35rem; display: flex; align-items: center; gap: 8px; }
+    .logo .dot { width: 30px; height: 30px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, var(--sun), var(--coral)); box-shadow: 0 0 0 5px var(--sun-soft); }
+    .logo span { color: var(--coral-deep); }
+    .logo { white-space: nowrap; }
+    @media (max-width: 480px) { .logo { font-size: 1.1rem; } .logo .dot { width: 24px; height: 24px; } .nav .btn { padding: 9px 14px; } }
+    .nav-links { display: flex; gap: 28px; font-weight: 600; font-size: .95rem; color: var(--ink-soft); }
+    .nav-links a:hover { color: var(--coral-deep); }
+    .nav .btn { padding: 10px 18px; font-size: .9rem; }
+    @media (max-width: 860px) { .nav-links { display: none; } }
+
+    /* Hero */
+    .hero { position: relative; padding: 72px 0 96px; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; width: 720px; height: 720px; right: -220px; top: -260px;
+      background: radial-gradient(circle, rgba(255,181,71,.45) 0%, rgba(255,122,89,.18) 45%, transparent 70%);
+      border-radius: 50%; z-index: -1;
+    }
+    .hero::after {
+      content: ""; position: absolute; width: 480px; height: 480px; left: -200px; bottom: -220px;
+      background: radial-gradient(circle, rgba(43,182,115,.18), transparent 70%); border-radius: 50%; z-index: -1;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4.2rem); margin: 18px 0 20px; }
+    .hero h1 em { font-style: normal; background: linear-gradient(90deg, var(--coral), var(--sun)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero p.lead { font-size: 1.18rem; color: var(--ink-soft); max-width: 540px; margin-bottom: 30px; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 34px; }
+    .trust { display: flex; align-items: center; gap: 14px; font-size: .95rem; color: var(--ink-soft); }
+    .avatars { display: flex; }
+    .avatars i { width: 38px; height: 38px; border-radius: 50%; border: 3px solid var(--cream); margin-left: -10px; display: grid; place-items: center; font-style: normal; font-weight: 700; color: var(--white); font-size: .85rem; }
+    .avatars i:first-child { margin-left: 0; }
+    .trust b { color: var(--ink); }
+
+    .hero-card {
+      position: relative; background: linear-gradient(160deg, #FFD9A0 0%, #FF9D7E 100%);
+      border-radius: 36px; aspect-ratio: 4/5; box-shadow: var(--shadow);
+      display: grid; place-items: center;
+    }
+    .hero-card .sunrise { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 36px; }
+    .hero-card .placeholder-note { position: relative; color: rgba(42,34,56,.55); font-weight: 600; font-size: .9rem; text-align: center; padding: 0 30px; margin-top: 46%; }
+    .float {
+      position: absolute; background: var(--white); border-radius: 18px; padding: 14px 18px;
+      box-shadow: 0 20px 40px -20px rgba(42,34,56,.35); display: flex; align-items: center; gap: 12px; font-size: .9rem;
+      animation: bob 5s ease-in-out infinite;
+    }
+    .float b { display: block; font-size: 1.05rem; }
+    .float small { color: var(--ink-soft); }
+    .float .ic { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; font-size: 1.3rem; }
+    .float.one { top: 8%; left: -28px; }
+    .float.two { bottom: 10%; right: -22px; animation-delay: -2.5s; }
+    @keyframes bob { 50% { transform: translateY(-10px); } }
+    @media (max-width: 920px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-card { max-width: 420px; margin: 10px auto 0; width: 100%; }
+      .float.one { left: 8px; } .float.two { right: 8px; }
+    }
+
+    /* Strip */
+    .strip { background: var(--ink); color: var(--white); padding: 22px 0; overflow: hidden; }
+    .marquee { display: flex; gap: 48px; white-space: nowrap; animation: slide 28s linear infinite; width: max-content; font-weight: 600; }
+    .marquee span::before { content: "☀"; color: var(--sun); margin-right: 14px; }
+    @keyframes slide { to { transform: translateX(-50%); } }
+
+    /* Promise */
+    .promise-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .promise {
+      background: var(--white); border-radius: var(--radius); padding: 28px 24px;
+      border: 1px solid #F5E8D8; transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .promise:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .promise .ic { width: 54px; height: 54px; border-radius: 16px; display: grid; place-items: center; font-size: 1.6rem; margin-bottom: 18px; }
+    .promise h3 { font-size: 1.25rem; margin-bottom: 8px; }
+    .promise p { color: var(--ink-soft); font-size: .97rem; }
+    @media (max-width: 960px) { .promise-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .promise-grid { grid-template-columns: 1fr; } }
+
+    /* About */
+    .about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
+    .about-photo {
+      aspect-ratio: 1; border-radius: 50% 50% 36px 36px;
+      background: linear-gradient(180deg, var(--sky), var(--leaf-soft));
+      display: grid; place-items: center; color: var(--ink-soft); font-weight: 600; position: relative;
+    }
+    .about-photo::after { content: "Hi, I'm Swaleha 👋"; position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--white); padding: 10px 20px; border-radius: 999px; font-weight: 700; color: var(--ink); box-shadow: 0 10px 24px -12px rgba(0,0,0,.25); white-space: nowrap; }
+    .about h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); margin: 14px 0 18px; }
+    .about p { color: var(--ink-soft); margin-bottom: 16px; font-size: 1.05rem; }
+    .about blockquote { font-family: "Fraunces", serif; font-size: 1.35rem; color: var(--coral-deep); border-left: 4px solid var(--sun); padding-left: 18px; margin: 26px 0; }
+    @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } .about-photo { max-width: 360px; width: 100%; margin: 0 auto; } }
+
+    /* Programs */
+    .programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+    .program {
+      background: var(--white); border-radius: 28px; padding: 34px 28px; border: 1px solid #F5E8D8;
+      display: flex; flex-direction: column; position: relative;
+    }
+    .program.featured { background: linear-gradient(170deg, #FFF4E2, #FFE5DB); border: 2px solid var(--coral); box-shadow: var(--shadow); }
+    .program .tag { position: absolute; top: -14px; left: 28px; background: var(--coral); color: var(--white); font-size: .78rem; font-weight: 700; padding: 5px 14px; border-radius: 999px; }
+    .program h3 { font-size: 1.5rem; margin-bottom: 6px; }
+    .program .dur { color: var(--coral-deep); font-weight: 700; font-size: .92rem; margin-bottom: 14px; }
+    .program > p { color: var(--ink-soft); margin-bottom: 20px; }
+    .program ul { list-style: none; display: grid; gap: 10px; margin-bottom: 28px; flex: 1; }
+    .program li { display: flex; gap: 10px; font-size: .97rem; }
+    .program li::before { content: "✓"; flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--leaf-soft); color: var(--leaf); font-weight: 800; font-size: .8rem; display: grid; place-items: center; margin-top: 2px; }
+    .program .btn { width: 100%; }
+    @media (max-width: 960px) { .programs-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; } }
+
+    /* Steps */
+    .steps { background: linear-gradient(180deg, var(--cream), var(--sun-soft)); }
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; counter-reset: step; }
+    .step { text-align: center; padding: 10px; }
+    .step::before {
+      counter-increment: step; content: counter(step);
+      display: grid; place-items: center; width: 64px; height: 64px; margin: 0 auto 18px;
+      border-radius: 50%; background: var(--white); color: var(--coral-deep);
+      font-family: "Fraunces", serif; font-size: 1.6rem; font-weight: 700;
+      box-shadow: 0 0 0 8px rgba(255,181,71,.25);
+    }
+    .step h3 { font-size: 1.2rem; margin-bottom: 8px; }
+    .step p { color: var(--ink-soft); font-size: .96rem; }
+    @media (max-width: 860px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .steps-grid { grid-template-columns: 1fr; } }
+
+    /* Testimonials */
+    .t-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .t-card { background: var(--white); border-radius: var(--radius); padding: 28px; border: 1px solid #F5E8D8; display: flex; flex-direction: column; gap: 18px; }
+    .t-card .stars { color: var(--sun); letter-spacing: 3px; }
+    .t-card p { font-size: 1.02rem; flex: 1; }
+    .t-who { display: flex; align-items: center; gap: 12px; }
+    .t-who i { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; color: var(--white); font-style: normal; font-weight: 700; }
+    .t-who b { display: block; }
+    .t-who small { color: var(--leaf); font-weight: 700; }
+    .sample-note { text-align: center; color: var(--ink-soft); font-size: .85rem; margin-top: 22px; font-style: italic; }
+    @media (max-width: 960px) { .t-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; } }
+
+    /* FAQ */
+    .faq { background: var(--white); }
+    .faq-list { max-width: 760px; margin: 0 auto; display: grid; gap: 14px; }
+    details { background: var(--cream); border-radius: 18px; padding: 20px 24px; border: 1px solid #F5E8D8; }
+    summary { font-weight: 700; font-size: 1.05rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--coral); font-size: 1.4rem; line-height: 1; transition: transform .2s; }
+    details[open] summary::after { transform: rotate(45deg); }
+    details p { color: var(--ink-soft); margin-top: 12px; }
+
+    /* CTA */
+    .cta-box {
+      position: relative; overflow: hidden; text-align: center; color: var(--white);
+      background: linear-gradient(135deg, var(--coral) 0%, var(--sun) 100%);
+      border-radius: 36px; padding: 72px 28px;
+    }
+    .cta-box::before, .cta-box::after { content: ""; position: absolute; border-radius: 50%; background: rgba(255,255,255,.15); }
+    .cta-box::before { width: 300px; height: 300px; top: -120px; left: -80px; }
+    .cta-box::after { width: 220px; height: 220px; bottom: -100px; right: -40px; }
+    .cta-box h2 { font-size: clamp(2rem, 5vw, 3.1rem); margin-bottom: 14px; position: relative; }
+    .cta-box p { font-size: 1.15rem; max-width: 560px; margin: 0 auto 30px; opacity: .95; position: relative; }
+    .cta-box .btn { position: relative; background: var(--white); color: var(--ink); font-size: 1.08rem; padding: 17px 32px; }
+    .cta-box .btn svg { color: var(--leaf); }
+
+    footer { padding: 40px 0 110px; color: var(--ink-soft); font-size: .92rem; }
+    .foot { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; }
+
+    /* Floating WhatsApp */
+    .wa-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 60px; height: 60px; border-radius: 50%; background: var(--leaf); color: var(--white);
+      display: grid; place-items: center; box-shadow: 0 14px 30px -10px rgba(43,182,115,.7);
+      animation: pulse 2.6s ease-out infinite;
+    }
+    .wa-float svg { width: 30px; height: 30px; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(43,182,115,.5); } 70% { box-shadow: 0 0 0 18px rgba(43,182,115,0); } 100% { box-shadow: 0 0 0 0 rgba(43,182,115,0); } }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></symbol>
+  </svg>
+
+  <header>
+    <nav class="wrap nav">
+      <a href="#" class="logo"><i class="dot"></i>Fat2Fit <span>with Swaleha</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#how">How it works</a>
+        <a href="#stories">Stories</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a class="btn btn-wa wa-link" data-msg="Hi Swaleha! I'd love to start my Fat2Fit journey 🌞" href="#"><svg><use href="#wa"/></svg>Let's talk</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">☀ A brighter you is closer than you think</span>
+          <h1>Your best days are <em>still ahead</em> of you.</h1>
+          <p class="lead">No crash diets. No guilt. Just real food, gentle habits, and a coach who believes in you — every single step of the way. Let's make feeling good your new normal.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-wa wa-link" data-msg="Hi Swaleha! I'm ready to feel lighter and stronger. Can we talk? 🌱" href="#"><svg><use href="#wa"/></svg>Start on WhatsApp</a>
+            <a class="btn btn-ghost" href="#programs">See programs →</a>
+          </div>
+          <div class="trust">
+            <div class="avatars">
+              <i style="background:#FF7A59">A</i><i style="background:#2BB673">R</i><i style="background:#FFB547">S</i><i style="background:#7C6CF2">N</i>
+            </div>
+            <div><b>Hundreds of happy, healthier clients</b><br/>and counting — you could be next ✨</div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <svg class="sunrise" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <circle cx="200" cy="300" r="110" fill="#FFE7B0" opacity=".9"/>
+            <circle cx="200" cy="300" r="150" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2"/>
+            <circle cx="200" cy="300" r="195" fill="none" stroke="#fff" stroke-opacity=".2" stroke-width="2"/>
+            <path d="M0 360 Q100 320 200 350 T400 340 V500 H0Z" fill="#FFF4E2" opacity=".85"/>
+            <path d="M0 400 Q120 370 220 395 T400 390 V500 H0Z" fill="#FFFBF4"/>
+          </svg>
+          <p class="placeholder-note">Swap in Swaleha's photo here</p>
+          <div class="float one"><span class="ic" style="background:var(--leaf-soft)">💚</span><div><b>Energy up</b><small>from week one</small></div></div>
+          <div class="float two"><span class="ic" style="background:var(--sun-soft)">🎉</span><div><b>Habits that stick</b><small>for life, not a month</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="strip" aria-hidden="true">
+      <div class="marquee">
+        <span>Progress over perfection</span><span>Eat well, feel amazing</span><span>Small steps, big wins</span><span>You are worth the effort</span><span>Strong is beautiful</span><span>Every day is a fresh start</span>
+        <span>Progress over perfection</span><span>Eat well, feel amazing</span><span>Small steps, big wins</span><span>You are worth the effort</span><span>Strong is beautiful</span><span>Every day is a fresh start</span>
+      </div>
+    </div>
+
+    <!-- PROMISE -->
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Why it works</span>
+          <h2>Health that feels hopeful, not hard</h2>
+          <p>We focus on what you can <em>add</em> to your life — energy, confidence, joy — not just what you take away.</p>
+        </div>
+        <div class="promise-grid">
+          <div class="promise reveal"><div class="ic" style="background:var(--sun-soft)">🥗</div><h3>Real food you love</h3><p>Meal plans built around your kitchen, culture and cravings. Yes, you can still enjoy your favourites.</p></div>
+          <div class="promise reveal"><div class="ic" style="background:var(--leaf-soft)">🌱</div><h3>Tiny habits, huge wins</h3><p>One small change at a time, so progress feels easy and lasts long after the program ends.</p></div>
+          <div class="promise reveal"><div class="ic" style="background:#FFE5DB">💪</div><h3>Movement that fits</h3><p>Home-friendly workouts for every fitness level — 20 minutes is enough to start feeling the difference.</p></div>
+          <div class="promise reveal"><div class="ic" style="background:var(--sky)">💬</div><h3>A coach in your pocket</h3><p>Daily WhatsApp check-ins, encouragement and answers whenever you need a nudge or a cheer.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="wrap about-grid">
+        <div class="about-photo reveal">Swaleha's photo</div>
+        <div class="reveal">
+          <span class="eyebrow">Meet your coach</span>
+          <h2>I've been where you are — and I know how good the other side feels.</h2>
+          <p>I started Fat2Fit because I believe everyone deserves to feel at home in their body. Not through punishment, but through kindness, consistency and a plan made just for you.</p>
+          <p>Together we'll build routines that fit your real life — your work, your family, your festivals — so feeling great becomes effortless.</p>
+          <blockquote>"You don't have to be perfect. You just have to begin. I'll take care of the rest with you."</blockquote>
+          <a class="btn btn-wa wa-link" data-msg="Hi Swaleha! I read your story and I'd love to work with you 💛" href="#"><svg><use href="#wa"/></svg>Say hello to Swaleha</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section id="programs">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Programs</span>
+          <h2>Pick your fresh start</h2>
+          <p>Every program is personalised to you. Not sure which fits? Message me and we'll figure it out together.</p>
+        </div>
+        <div class="programs-grid">
+          <div class="program reveal">
+            <h3>Kickstart</h3>
+            <div class="dur">4 weeks · Build the foundation</div>
+            <p>Perfect if you're just beginning and want quick, motivating wins.</p>
+            <ul>
+              <li>Personalised meal plan</li>
+              <li>Beginner home workouts</li>
+              <li>Weekly WhatsApp check-ins</li>
+              <li>Habit tracker &amp; grocery guide</li>
+            </ul>
+            <a class="btn btn-ghost wa-link" data-msg="Hi Swaleha! I'm interested in the 4-week Kickstart program 🌞" href="#">Ask about Kickstart</a>
+          </div>
+          <div class="program featured reveal">
+            <span class="tag">Most loved</span>
+            <h3>Transform</h3>
+            <div class="dur">12 weeks · Real, lasting change</div>
+            <p>Our signature journey for steady fat loss and a confidence glow-up.</p>
+            <ul>
+              <li>Fully custom nutrition, updated every 2 weeks</li>
+              <li>Progressive workout plan</li>
+              <li>Daily WhatsApp support</li>
+              <li>Monthly 1:1 video call</li>
+              <li>Mindset &amp; sleep coaching</li>
+            </ul>
+            <a class="btn btn-wa wa-link" data-msg="Hi Swaleha! I'd love to join the 12-week Transform program 💪" href="#"><svg><use href="#wa"/></svg>Join Transform</a>
+          </div>
+          <div class="program reveal">
+            <h3>Lifestyle</h3>
+            <div class="dur">6 months · Your healthiest era</div>
+            <p>For lasting results and special goals — PCOS, thyroid, post-pregnancy and more.</p>
+            <ul>
+              <li>Everything in Transform</li>
+              <li>Condition-aware nutrition</li>
+              <li>Bi-weekly 1:1 video calls</li>
+              <li>Maintenance &amp; travel plans</li>
+            </ul>
+            <a class="btn btn-ghost wa-link" data-msg="Hi Swaleha! Tell me more about the 6-month Lifestyle program 🌿" href="#">Ask about Lifestyle</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="steps" id="how">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">How it works</span>
+          <h2>Four easy steps to a happier, healthier you</h2>
+        </div>
+        <div class="steps-grid">
+          <div class="step reveal"><h3>Say hi on WhatsApp</h3><p>Tap the button and tell me a little about your goals. No pressure, no forms.</p></div>
+          <div class="step reveal"><h3>Free discovery chat</h3><p>We talk about your lifestyle, food and what's held you back before.</p></div>
+          <div class="step reveal"><h3>Get your plan</h3><p>Receive a plan designed around <em>you</em> — your tastes, schedule and body.</p></div>
+          <div class="step reveal"><h3>Glow &amp; grow</h3><p>Check in, celebrate wins, and watch your energy and confidence rise.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="stories">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Happy stories</span>
+          <h2>Real people. Real smiles.</h2>
+          <p>The best part of my work is watching clients fall back in love with how they feel.</p>
+        </div>
+        <div class="t-grid">
+          <div class="t-card reveal">
+            <div class="stars">★★★★★</div>
+            <p>"I finally stopped feeling guilty about food. I have so much more energy for my kids, and my clothes fit beautifully again!"</p>
+            <div class="t-who"><i style="background:#FF7A59">A</i><div><b>Client name</b><small>Lost 9 kg in 12 weeks</small></div></div>
+          </div>
+          <div class="t-card reveal">
+            <div class="stars">★★★★★</div>
+            <p>"Swaleha's daily messages kept me going on the tough days. It never felt like a diet — it felt like a new way of living."</p>
+            <div class="t-who"><i style="background:#2BB673">R</i><div><b>Client name</b><small>Down 2 dress sizes</small></div></div>
+          </div>
+          <div class="t-card reveal">
+            <div class="stars">★★★★★</div>
+            <p>"My PCOS symptoms improved and I feel strong for the first time in years. I wish I'd started sooner!"</p>
+            <div class="t-who"><i style="background:#FFB547">S</i><div><b>Client name</b><small>Healthier cycles &amp; more energy</small></div></div>
+          </div>
+        </div>
+        <p class="sample-note">Sample testimonials — replace with real client stories and photos (with their permission).</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Questions</span>
+          <h2>Good questions, happy answers</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details open><summary>Do I have to give up my favourite foods?</summary><p>Not at all! We build your plan around foods you already love, with smart swaps and portions so you can enjoy life and still see results.</p></details>
+          <details><summary>I've tried before and failed. Will this work for me?</summary><p>It wasn't you that failed — it was the plan. We go slow, personalise everything, and focus on habits that last. You'll have support every day, so you're never doing it alone.</p></details>
+          <details><summary>Do I need a gym?</summary><p>Nope. Every workout can be done at home with little or no equipment. If you love the gym, we'll make a plan for that too.</p></details>
+          <details><summary>Can you help with PCOS, thyroid or post-pregnancy weight?</summary><p>Yes. The Lifestyle program is designed for these goals. Please continue to follow your doctor's advice — coaching works alongside your medical care.</p></details>
+          <details><summary>How do I get started?</summary><p>Just tap any WhatsApp button on this page and say hi. We'll have a friendly chat and find the right program for you.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="wrap">
+        <div class="cta-box reveal">
+          <h2>Today is a beautiful day to begin.</h2>
+          <p>One message is all it takes. Your future self is already thanking you. 🌞</p>
+          <a class="btn wa-link" data-msg="Hi Swaleha! Today's the day — I'm ready to begin my Fat2Fit journey! 🌞" href="#"><svg><use href="#wa"/></svg>Message Swaleha on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <a href="#" class="logo"><i class="dot"></i>Fat2Fit <span>with Swaleha</span></a>
+      <span>© <span id="yr"></span> Fat2Fit with Swaleha · Made with sunshine ☀</span>
+    </div>
+  </footer>
+
+  <a class="wa-float wa-link" data-msg="Hi Swaleha! I have a question about your programs 😊" href="#" aria-label="Chat with Swaleha on WhatsApp"><svg><use href="#wa"/></svg></a>
+
+  <script>
+    // TODO: replace with Swaleha's WhatsApp number in international format, digits only (e.g. 919876543210)
+    const WHATSAPP_NUMBER = "910000000000";
+
+    document.querySelectorAll(".wa-link").forEach((a) => {
+      const msg = a.dataset.msg || "Hi Swaleha!";
+      a.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+      a.target = "_blank";
+      a.rel = "noopener";
+    });
+
+    document.getElementById("yr").textContent = new Date().getFullYear();
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
